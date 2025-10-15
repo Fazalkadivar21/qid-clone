@@ -8,13 +8,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-raleway);
+  --font-heading: var(--font-poppins);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -22,5 +22,80 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Headings use Poppins by default */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-sans);
+  margin: 0;
+}
+
+/* Utility classes for Poppins variants requested by the layout */
+.poppins-semi {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-semi-italic {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Raleway utilities */
+.raleway-regular {
+  font-family: var(--font-raleway);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.raleway-semibold {
+  font-family: var(--font-raleway);
+  font-weight: 600;
+  font-style: bold;
+}
+
+.raleway-bold {
+  font-family: var(--font-raleway);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.raleway-medium {
+  font-family: var(--font-raleway);
+  font-weight: 500;
+  font-style: normal;
+}
+
+.raleway-italic {
+  font-family: var(--font-raleway);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Subtle grid background utility for dark/light themes */
+:root {
+  --grid-line: rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grid-line: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.bg-grid {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
