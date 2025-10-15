@@ -48,7 +48,7 @@ const OneClick = () => {
   return (
     <div className="container mb-32 md:mb-0 mx-auto px-6 md:px-8 lg:px-16 xl:px-32 2xl:px-52 mt-52">
       <h2 className="text-5xl md:text-6xl lg:text-7xl raleway-bold md:text-left">
-        Trust us, it's truly a matter of just{" "}
+        Trust us, it&apos;s truly a matter of just{" "}
         <snap className="text-orange-500">one click</snap> .
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-24 md:mt-36">
@@ -57,7 +57,7 @@ const OneClick = () => {
         </div>
         <div className="text-3xl raleway-semibold border border-[#7a7a7a] p-6 rounded-2xl text-white md:text-left">
           <p>
-            Qid's AI engine extracts details like Passport Number, Visa Number,
+            Qid&apos;s AI engine extracts details like Passport Number, Visa Number,
             Name, Country, and Photos from the images
           </p>
         </div>
@@ -80,7 +80,7 @@ const Elevate = () => {
         <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl sm:text-4xl md:text-5xl raleway-bold leading-tight">
             Elevate C-Form Processing with{" "}
-            <span className="text-white">qid's</span> State-of-the-Art Chrome
+            <span className="text-white">qid&apos;s</span> State-of-the-Art Chrome
             Extension
           </h2>
           <p className="mt-4 text-xl raleway-semibold text-[#7a7a7a]">
