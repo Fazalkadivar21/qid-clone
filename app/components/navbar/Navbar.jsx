@@ -64,7 +64,7 @@ export default function Navbar() {
               </li>
               <li className="border-b border-white/20">
                 <Link 
-                  href="/qr-based-check-in-software" 
+                  href="/qr-check-in"
                   className="block px-6 py-2 bg-[#4c4c4c] hover:text-gray-100 transition"
                   onClick={() => setIsOpen(false)}
                 >
@@ -73,7 +73,7 @@ export default function Navbar() {
               </li>
               <li className="border-b border-white/20">
                 <Link 
-                  href="/home/c-form-automation-for-hotels" 
+                  href="/c-form"
                   className="block px-6 py-3 bg-[#4c4c4c] hover:text-gray-100 transition"
                   onClick={() => setIsOpen(false)}
                 >
@@ -82,7 +82,7 @@ export default function Navbar() {
               </li>
               <li className="border-b border-white/20">
                 <Link 
-                  href="/support" 
+                  href="/contact"
                   className="block px-6 py-3 bg-[#4c4c4c] hover:text-gray-100 transition"
                   onClick={() => setIsOpen(false)}
                 >
