@@ -4,7 +4,7 @@ import React from "react";
 
 // A reusable component for the content sections to keep the code clean
 const PolicySection = ({ title, children }) => (
-  <div className="mb-8 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm md:p-8">
+  <div className="mb-8 rounded-2xl raleway-semibold border border-neutral-200 bg-white p-6 shadow-sm md:p-8">
     {title && (
       <h2 className="mb-4 text-xl font-bold uppercase tracking-wider text-gray-900 md:text-2xl">
         {title}
@@ -72,6 +72,7 @@ const Terms = () => {
               The app does use third-party services that declare their Terms and
               Conditions. Link to Terms and Conditions of third-party service
               providers used by the app:
+            </p>
               <ul>
                 <li>
                   <a
@@ -84,7 +85,6 @@ const Terms = () => {
                   </a>
                 </li>
               </ul>
-            </p>
           </PolicySection>
 
           {/* LINKS TO THIRD-PARTY PRIVACY POLICIES */}

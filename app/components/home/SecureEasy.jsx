@@ -19,7 +19,7 @@ export default function IdentityEcosystem() {
             </h2>
             
             <Link 
-              href="/signup"
+              href="/app"
               className="inline-flex items-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors duration-200"
             >
               Create free account

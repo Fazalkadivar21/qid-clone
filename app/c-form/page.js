@@ -49,7 +49,7 @@ const OneClick = () => {
     <div className="container mb-32 md:mb-0 mx-auto px-6 md:px-8 lg:px-16 xl:px-32 2xl:px-52 mt-52">
       <h2 className="text-5xl md:text-6xl lg:text-7xl raleway-bold md:text-left">
         Trust us, it&apos;s truly a matter of just{" "}
-        <snap className="text-orange-500">one click</snap> .
+        <span className="text-orange-500">one click</span> .
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-24 md:mt-36">
         <div className="text-3xl raleway-semibold border border-[#7a7a7a] p-6 rounded-2xl text-white md:text-left">
@@ -114,7 +114,7 @@ const Cinfo = () => {
     <div className="flex flex-col gap-10 border border-[#7a7a7a] p-6 m-6 rounded-2xl md:w-2/3">
       <h2 className="text-5xl raleway-semibold">What is C-Form?</h2>
       <p className="text-2xl raleway-regular">
-        In India, a <a href="https://indianfrro.gov.in/frro/" className="font-extrabold underline">C-Form</a> is a mandatory document required under the
+        In India, a <a href="https://indianfrro.gov.in/frro/" target="_blank" className="font-extrabold underline">C-Form</a> is a mandatory document required under the
         Foreigners’ Registration Act, 1946.
       </p>
       <p className="text-2xl raleway-regular">

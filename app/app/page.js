@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function AppDownloadSection() {
@@ -16,6 +17,7 @@ export default function AppDownloadSection() {
             <div className='flex flex-col md:flex-row gap-10 md:gap-0'>
           <div className="flex flex-col items-center md:items-start gap-4 mt-8">
             {/* App Store Button */}
+            <Link href="https://apps.apple.com/us/app/qid-quick-id/id1629041779/" target="_blank" className="hover:opacity-80 transition">
             <Image
               src="/images/app/apple.png" // Replace with actual App Store badge image
               alt="Download on the App Store"
@@ -23,7 +25,9 @@ export default function AppDownloadSection() {
               height={100}
               className="w-auto h-auto"
             />
+            </Link>
             {/* Google Play Button */}
+            <Link href="https://play.google.com/store/apps/details?id=com.quickids.digilocker.qid" target="_blank" className="hover:opacity-80 transition">
             <Image
               src="/images/app/gplay.png" // Replace with actual Google Play badge image
               alt="Download on Google Play"
@@ -31,6 +35,7 @@ export default function AppDownloadSection() {
               height={100}
               className="w-auto h-auto"
             />
+            </Link>
           </div>
 
           {/* QR Code */}

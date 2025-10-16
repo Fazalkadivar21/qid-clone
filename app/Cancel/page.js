@@ -4,7 +4,7 @@ import React from "react";
 
 // A reusable component for the content sections to keep the code clean
 const PolicySection = ({ title, children }) => (
-  <div className="mb-8 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm md:p-8">
+  <div className="mb-8 rounded-2xl raleway-semibold border border-neutral-200 bg-white p-6 shadow-sm md:p-8">
     {title && (
       <h2 className="mb-4 text-xl font-bold uppercase tracking-wider text-gray-900 md:text-2xl">
         {title}
@@ -51,8 +51,8 @@ const Terms = () => {
             <p>This policy is subject to change, and any modifications will be communicated to users through the application.</p>
             <p>By using our subscription-based services, businesses and users agree to abide by the terms and conditions outlined in this Cancellation and Refund Policy. If you have any questions or concerns, please contact our customer support team at support@oneqid.com.</p>
             <p>For any questions or concerns regarding our Cancellation and Refund Policy, please contact us at:</p>
-            <p>Email: support@oneqid.com</p>
-            <p>Phone: +91 9606406404</p>
+            <p>Email: <a href="mailto:support@oneqid.com" className="text-pink-500 hover:text-pink-700">support@oneqid.com</a></p>
+            <p>Phone: <a href="tel:+919606406404" className="text-pink-500 hover:text-pink-700">+91 9606406404</a></p>
             <p>This policy is effective from 21-12-2023 and is subject to change without prior notice. Please review our policy periodically for any updates.</p>
           </PolicySection>
         </main>

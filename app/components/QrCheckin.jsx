@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 
 export default function QrCheckin() {
   const pathname = usePathname();
@@ -24,7 +24,7 @@ export default function QrCheckin() {
             #1 QR Based Check-In system for your organisation
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-            <button className="bg-white text-black px-8 py-4 rounded-full font-bold text-lg shadow hover:bg-gray-200 transition flex items-center justify-center gap-2">
+            <button onClick={() => redirect("https://business.oneqid.com/signup")} className="bg-white text-black px-8 py-4 rounded-full font-bold text-lg shadow hover:bg-gray-200 transition flex items-center justify-center gap-2">
               Start for Free{" "}
               <svg
                 className="w-5 h-5"
@@ -41,7 +41,7 @@ export default function QrCheckin() {
               </svg>
             </button>
             {!hideLearnMore && (
-              <button className="border border-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-black transition flex items-center justify-center gap-2">
+              <button onClick={() => redirect("/qr-check-in")} className="border border-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-black transition flex items-center justify-center gap-2">
                 Learn More{' '}
                 <svg
                   className="w-5 h-5"
