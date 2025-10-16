@@ -137,7 +137,7 @@ export default function CForm() {
   return (
     <div className="bg-grid">
       <div className="container mb-32 md:mb-0 mx-auto px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-52">
-        <div className="flex flex-col gap-4 mb-8 mt-16 md:mt-36">
+        <div className="flex flex-col gap-4 mb-8 pt-16 md:pt-36">
           <h1 className="text-5xl md:text-6xl lg:text-7xl raleway-bold md:text-left">
             <span className="text-orange-500">C-Form</span> Automation
           </h1>

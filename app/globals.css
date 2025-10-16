@@ -99,6 +99,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --grid-line: rgba(255, 255, 255, 0.06);
+  }
+}
+
 .bg-grid {
   background-color: var(--background);
   background-image:
