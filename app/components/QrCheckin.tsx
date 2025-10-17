@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { redirect, usePathname } from "next/navigation";
+import { FC } from "react";
 
-export default function QrCheckin() {
+const QrCheckin: FC = () => {
   const pathname = usePathname();
   const hideLearnMore = pathname.includes("/qr-check-in");
+  
   return (
     <section
       className="relative bg-grid text-white py-16 px-4 md:px-16 overflow-hidden min-h-[80vh] flex items-center"
@@ -65,7 +67,7 @@ export default function QrCheckin() {
         <div className="flex justify-center md:justify-end">
           <div className="w-64 sm:w-72 md:w-80 lg:w-96">
             <Image
-              src="/images/qrcheckin.png" // Replace with your actual image path
+              src="/images/qrcheckin.png"
               alt="QR Check-In"
               width={400}
               height={600}
@@ -76,4 +78,6 @@ export default function QrCheckin() {
       </div>
     </section>
   );
-}
+};
+
+export default QrCheckin;

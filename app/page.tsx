@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "./components/home/Hero";
 import SecureEasy from "./components/home/SecureEasy";
 import ForBusiness from "./components/home/ForBusiness";
@@ -11,10 +10,10 @@ export default function Home() {
     <>
       <Hero />
       <SecureEasy />
-      <ForBusiness/>
-      <UsedBy/>
-      <QrCheckin/>
-      <BookDemo/>
+      <ForBusiness />
+      <UsedBy />
+      <QrCheckin />
+      <BookDemo />
     </>
   );
 }

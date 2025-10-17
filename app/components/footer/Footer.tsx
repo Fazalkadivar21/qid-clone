@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FC } from "react";
 
-export default function Footer() {
+const Footer: FC = () => {
   return (
     <footer className="bg-black text-white flex flex-col items-center border-t border-[#7a7a7a]">
       {/* Main Footer Content */}
@@ -17,10 +18,10 @@ export default function Footer() {
             <h3 className="md:text-xl lg:text-2xl font-semibold">Download App</h3>
             <ul className="space-y-4 text-white lg:w-2/3">
               <li>
-                <Link href="https://play.google.com/store/apps/details?id=com.quickids.digilocker.qid"  target="_blank" className="hover:text-white transition">Android</Link>
+                <Link href="https://play.google.com/store/apps/details?id=com.quickids.digilocker.qid" target="_blank" className="hover:text-white transition">Android</Link>
               </li>
               <li>
-                <Link href="https://apps.apple.com/us/app/qid-quick-id/id1629041779/"  target="_blank" className="hover:text-white transition">iOS</Link>
+                <Link href="https://apps.apple.com/us/app/qid-quick-id/id1629041779/" target="_blank" className="hover:text-white transition">iOS</Link>
               </li>
               <li>
                 <Link href="https://chromewebstore.google.com/detail/qid-c-form-pro/afghjacdcfhoikcccemlchhmokfgobpj" target="_blank" className="hover:text-white transition">C-Form Pro Plugin</Link>
@@ -81,4 +82,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

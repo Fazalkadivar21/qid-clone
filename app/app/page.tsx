@@ -19,7 +19,7 @@ export default function AppDownloadSection() {
             {/* App Store Button */}
             <Link href="https://apps.apple.com/us/app/qid-quick-id/id1629041779/" target="_blank" className="hover:opacity-80 transition">
             <Image
-              src="/images/app/apple.png" // Replace with actual App Store badge image
+              src="/images/app/apple.png"
               alt="Download on the App Store"
               width={300}
               height={100}
@@ -29,7 +29,7 @@ export default function AppDownloadSection() {
             {/* Google Play Button */}
             <Link href="https://play.google.com/store/apps/details?id=com.quickids.digilocker.qid" target="_blank" className="hover:opacity-80 transition">
             <Image
-              src="/images/app/gplay.png" // Replace with actual Google Play badge image
+              src="/images/app/gplay.png"
               alt="Download on Google Play"
               width={300}
               height={100}
@@ -41,7 +41,7 @@ export default function AppDownloadSection() {
           {/* QR Code */}
           <div className="flex justify-center md:justify-start">
             <Image
-              src="/images/app/qr-code.png" // Replace with actual QR code image
+              src="/images/app/qr-code.png"
               alt="qid QR Code"
               width={250}
               height={250}
@@ -54,7 +54,7 @@ export default function AppDownloadSection() {
         {/* Right Side - Mobile Mockup */}
         <div className="flex-1 flex justify-center md:justify-end">
           <Image
-            src="/images/app/Asset-16.png" // Replace with actual mobile hand screenshot
+            src="/images/app/Asset-16.png"
             alt="qid App Preview"
             width={400}
             height={800}

@@ -1,4 +1,11 @@
-const Info = ({ title, description }) => {
+import { FC } from "react";
+
+interface InfoProps {
+  title: string;
+  description: string;
+}
+
+const Info: FC<InfoProps> = ({ title, description }) => {
   return (
     <div className="flex w-full md:w-2/3 flex-col items-start raleway-medium justify-around mb-5">
       {/* Info(head,description [tags in first only]) */}
@@ -8,7 +15,7 @@ const Info = ({ title, description }) => {
   );
 };
 
-export default function PowerUI() {
+const PowerUI: FC = () => {
   return (
     <div className="w-full h-full flex flex-col items-center mt-20">
       <div className="raleway-bold w-3/4 mb-10 flex flex-col gap-3">
@@ -49,7 +56,7 @@ export default function PowerUI() {
             <div className="w-2/3">
             <Info
               title="Identity Documents"
-              description="Tired of ID management headaches? Switch to qid‘s hassle-free, AI-powered ID document collection. Effortlessly verify identities from Aadhar, driver’s licenses, passports, and custom documents.
+              description="Tired of ID management headaches? Switch to qid's hassle-free, AI-powered ID document collection. Effortlessly verify identities from Aadhar, driver's licenses, passports, and custom documents.
 
 Say goodbye to manual processes and hello to seamless efficiency!"
             />
@@ -87,7 +94,7 @@ Say goodbye to manual processes and hello to seamless efficiency!"
             </div>
             <Info
               title="Form Fields"
-              description="With qid’s advanced form features, you can collect all necessary details with a new-age UI experience."
+              description="With qid's advanced form features, you can collect all necessary details with a new-age UI experience."
             />
           </div>
         </div>
@@ -113,7 +120,7 @@ Say goodbye to manual processes and hello to seamless efficiency!"
             </div>
             <Info
               title="Signature"
-              description="No more scanning, cropping, and pasting signatures on digital records. QID’s inbuilt signature pad provides seamless signature collection."
+              description="No more scanning, cropping, and pasting signatures on digital records. QID's inbuilt signature pad provides seamless signature collection."
             />
           </div>
         </div>
@@ -150,4 +157,6 @@ Say goodbye to manual processes and hello to seamless efficiency!"
       </div>
     </div>
   );
-}
+};
+
+export default PowerUI;

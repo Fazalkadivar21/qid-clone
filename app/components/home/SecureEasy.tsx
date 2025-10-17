@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 
-export default function IdentityEcosystem() {
+const IdentityEcosystem: FC = () => {
   return (
     <>
       {/* Secure Easy Section */}
@@ -112,4 +113,6 @@ export default function IdentityEcosystem() {
       </div>
     </>
   );
-}
+};
+
+export default IdentityEcosystem;

@@ -1,9 +1,11 @@
-// Privacy Policy page (app router)
-// Dark theme cards + subtle grid background to match site style
-import React from 'react';
+import { FC, ReactNode } from 'react';
 
-// A reusable component for the content sections to keep the code clean
-const PolicySection = ({ title, children }) => (
+interface PolicySectionProps {
+  title?: string;
+  children: ReactNode;
+}
+
+const PolicySection: FC<PolicySectionProps> = ({ title, children }) => (
   <div className="mb-8 rounded-2xl raleway-semibold border border-neutral-200 bg-white p-6 shadow-sm md:p-8">
     {title && (
       <h2 className="mb-4 text-xl font-bold uppercase tracking-wider text-gray-900 md:text-2xl">
@@ -16,7 +18,7 @@ const PolicySection = ({ title, children }) => (
   </div>
 );
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: FC = () => {
   return (
     <div className="bg-grid min-h-screen font-sans py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -35,7 +37,7 @@ const PrivacyPolicy = () => {
           {/* Intro */}
           <PolicySection>
             <p>
-              This privacy policy applies to QID (“the App”) application available on the Google Play Store and Apple App Store. QID collects and stores user data related to identification for authentication and disclosure purposes. This privacy policy explains how QID collects, uses, stores, and protects user data.
+              This privacy policy applies to QID ("the App") application available on the Google Play Store and Apple App Store. QID collects and stores user data related to identification for authentication and disclosure purposes. This privacy policy explains how QID collects, uses, stores, and protects user data.
             </p>
             <p>
               The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible under Terms and Conditions Section unless otherwise defined in this Privacy Policy.
@@ -76,7 +78,7 @@ const PrivacyPolicy = () => {
           {/* DATA COLLECTION AND STORAGE */}
           <PolicySection title="Data Collection and Storage">
             <p>
-              The App collects and stores user data related to identification for authentication and disclosure purposes. This includes the user’s government-authorized identity documents and any other necessary information required for the authentication process.
+              The App collects and stores user data related to identification for authentication and disclosure purposes. This includes the user's government-authorized identity documents and any other necessary information required for the authentication process.
             </p>
             <p>
               We collect this information to verify the identity of our users and to prevent fraudulent activities. This information will be stored securely and will only be used for authentication and disclosure as required by law.
@@ -101,7 +103,7 @@ const PrivacyPolicy = () => {
           {/* DATA USAGE POLICY */}
           <PolicySection title="Data Usage Policy">
             <p>
-              The app collects user IDs for the sole purpose of identifying users and providing the app’s services. The app will not use user IDs for any other purpose, nor will it disclose user IDs to any third parties, except as required by law or necessary for the operation and maintenance of the app. The app will ensure that user IDs are kept secure and protected from unauthorized access or disclosure, and will comply with all applicable data protection laws and regulations.
+              The app collects user IDs for the sole purpose of identifying users and providing the app's services. The app will not use user IDs for any other purpose, nor will it disclose user IDs to any third parties, except as required by law or necessary for the operation and maintenance of the app. The app will ensure that user IDs are kept secure and protected from unauthorized access or disclosure, and will comply with all applicable data protection laws and regulations.
             </p>
             <p>
               In the event that the app is required by law to disclose user IDs to third parties, it will do so only to the extent required by law and with appropriate safeguards in place. The app will provide clear and conspicuous notice to users of its data usage practices and will obtain user consent where required by law. Users may request access to their user IDs and may request that their user IDs be deleted or corrected as necessary.
@@ -130,7 +132,7 @@ const PrivacyPolicy = () => {
           {/* LOG DATA */}
           <PolicySection title="Log Data">
             <p>
-              We hereby notify you that in the event of an error occurring in our Service, we may collect data and information from your mobile device, including but not limited to, Log Data, through the use of third-party products. This Log Data may contain but is not limited to, your device’s Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when using our Service, the date and time of use, and other relevant statistics.
+              We hereby notify you that in the event of an error occurring in our Service, we may collect data and information from your mobile device, including but not limited to, Log Data, through the use of third-party products. This Log Data may contain but is not limited to, your device's Internet Protocol ("IP") address, device name, operating system version, the configuration of the app when using our Service, the date and time of use, and other relevant statistics.
             </p>
             <p>
               By continuing to use our Service, you explicitly consent to the collection, storage, and use of the aforementioned data and information for purposes including, but not limited to, error troubleshooting, Service improvement, and security purposes. You acknowledge that such data and information may be transferred to and stored on servers located in other jurisdictions, including those outside your home country.
@@ -140,7 +142,7 @@ const PrivacyPolicy = () => {
           {/* COOKIE POLICY */}
           <PolicySection title="Cookie Policy">
             <p>
-              This Service acknowledges that cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These cookies are sent to your browser from the websites that you visit and are stored on your device’s internal memory.
+              This Service acknowledges that cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These cookies are sent to your browser from the websites that you visit and are stored on your device's internal memory.
             </p>
             <p>
               This Service does not use cookies explicitly. However, the app may incorporate third-party code and libraries that may use cookies to collect information and improve their services. The user has the option to either accept or refuse these cookies and will be notified when a cookie is being sent to their device. If the user chooses to refuse our cookies, it may result in certain portions of the Service being unavailable.
@@ -163,8 +165,8 @@ const PrivacyPolicy = () => {
             </p>
           </PolicySection>
 
-          {/* CHILDREN’S ONLINE PRIVACY PROTECTION ACT (COPPA) DISCLOSURE */}
-          <PolicySection title="Children’s Online Privacy Protection Act (COPPA) Disclosure">
+          {/* CHILDREN'S ONLINE PRIVACY PROTECTION ACT (COPPA) DISCLOSURE */}
+          <PolicySection title="Children's Online Privacy Protection Act (COPPA) Disclosure">
             <p>
               These Services are not intended for individuals under the age of 13. We do not knowingly collect personally identifiable information from children under the age of 13. If we discover that we have collected such information from a child under 13 years of age, we will immediately take steps to delete such information from our servers.
             </p>
@@ -172,7 +174,7 @@ const PrivacyPolicy = () => {
               If you are a parent or legal guardian and you believe that your child under the age of 13 has provided personal information to us, please contact us immediately so that we can take appropriate action to delete such information from our servers.
             </p>
             <p>
-              We take children’s privacy seriously and comply with the Children’s Online Privacy Protection Act (COPPA).
+              We take children's privacy seriously and comply with the Children's Online Privacy Protection Act (COPPA).
             </p>
           </PolicySection>
 
@@ -212,7 +214,7 @@ const PrivacyPolicy = () => {
           {/* CONTACT INFORMATION */}
           <PolicySection title="Contact Information">
             <p>
-              If you have any questions or concerns about this privacy policy or the App’s handling of user data, please contact us at {" "}
+              If you have any questions or concerns about this privacy policy or the App's handling of user data, please contact us at {" "}
               <a href="mailto:support@oneqid.com" className="text-blue-600 underline hover:text-blue-500">support@oneqid.com</a>.
             </p>
           </PolicySection>

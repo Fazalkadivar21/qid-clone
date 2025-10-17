@@ -47,7 +47,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .poppins-semi-italic {
   font-family: var(--font-poppins);
-  font-weight: 600;
   font-style: italic;
 }
 

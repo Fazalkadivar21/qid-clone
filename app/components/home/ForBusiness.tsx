@@ -1,4 +1,6 @@
-export default function ForBusiness() {
+import { FC } from "react";
+
+const ForBusiness: FC = () => {
   return (
     <div className="relative w-full h-fit bg-grid overflow-hidden">
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen py-20">
@@ -83,4 +85,6 @@ export default function ForBusiness() {
       </div>
     </div>
   );
-}
+};
+
+export default ForBusiness;

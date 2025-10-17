@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 
-const Btn = () => {
+const Btn: FC = () => {
   return (
     <Link
       href="https://chromewebstore.google.com/detail/qid-c-form-pro/afghjacdcfhoikcccemlchhmokfgobpj"
@@ -21,7 +22,7 @@ const Btn = () => {
   );
 };
 
-const CformImage = () => {
+const CformImage: FC = () => {
   return (
     <>
       {/* Show on mobile */}
@@ -44,7 +45,7 @@ const CformImage = () => {
   );
 };
 
-const OneClick = () => {
+const OneClick: FC = () => {
   return (
     <div className="container mb-32 md:mb-0 mx-auto px-6 md:px-8 lg:px-16 xl:px-32 2xl:px-52 mt-52">
       <h2 className="text-5xl md:text-6xl lg:text-7xl raleway-bold md:text-left">
@@ -72,7 +73,7 @@ const OneClick = () => {
   );
 };
 
-const Elevate = () => {
+const Elevate: FC = () => {
   return (
     <div className="text-white py-16 px-4 mt-40">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 py-6 md:py-0">
@@ -84,7 +85,7 @@ const Elevate = () => {
             Extension
           </h2>
           <p className="mt-4 text-xl raleway-semibold text-[#7a7a7a]">
-            Simplify C-Form management like never before with qid’s
+            Simplify C-Form management like never before with qid's
             revolutionary Chrome extension.
           </p>
 
@@ -109,13 +110,13 @@ const Elevate = () => {
   );
 };
 
-const Cinfo = () => {
+const Cinfo: FC = () => {
   return (
     <div className="flex flex-col gap-10 border border-[#7a7a7a] p-6 m-6 rounded-2xl md:w-2/3">
       <h2 className="text-5xl raleway-semibold">What is C-Form?</h2>
       <p className="text-2xl raleway-regular">
-        In India, a <a href="https://indianfrro.gov.in/frro/" target="_blank" className="font-extrabold underline">C-Form</a> is a mandatory document required under the
-        Foreigners’ Registration Act, 1946.
+        In India, a <a href="https://indianfrro.gov.in/frro/" target="_blank" rel="noopener noreferrer" className="font-extrabold underline">C-Form</a> is a mandatory document required under the
+        Foreigners' Registration Act, 1946.
       </p>
       <p className="text-2xl raleway-regular">
         It serves as a record of the stay of foreign nationals within the
@@ -124,7 +125,7 @@ const Cinfo = () => {
       <p className="text-2xl raleway-regular">
         Hotels, guesthouses, and other accommodation providers are legally
         obligated to submit C-Forms to local authorities for every foreign
-        guest’s stay.
+        guest's stay.
       </p>
       <div className="px-6 py-4 text-xl raleway-bold border border-[#7a7a7a] rounded-full w-fit">
         <Link href="/c-form">Read more</Link>

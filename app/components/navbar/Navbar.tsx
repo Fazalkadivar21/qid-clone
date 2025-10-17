@@ -1,9 +1,9 @@
-"use client"
-import { useState } from 'react';
+"use client";
+import { useState, FC } from "react";
 import Link from "next/link";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar: FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <header className="w-full sticky top-0 z-50 border-b border-white/20 bg-black">
@@ -95,4 +95,6 @@ export default function Navbar() {
       </nav>
     </header>
   );
-}
+};
+
+export default Navbar;

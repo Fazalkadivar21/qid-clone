@@ -1,17 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, FC } from "react";
 
-export default function UsedBy() {
-  const people = useMemo(
+interface Person {
+  name: string;
+  title: string;
+  company: string;
+  quote: string;
+  avatar: string;
+}
+
+interface CarouselButtonProps {
+  onClick: () => void;
+  position: 'left' | 'right';
+  label: string;
+}
+
+const UsedBy: FC = () => {
+  const people: Person[] = useMemo(
     () => [
       {
         name: "Lavish Sharma",
         title: "Operations Manager",
         company: "The Lost Hostels",
         quote:
-          "The managers of our property suggest QID to their customers due to its ease of access.					",
+          "The managers of our property suggest QID to their customers due to its ease of access.",
         avatar: "/images/usedby/Lavish.jpg",
       },
       {
@@ -50,15 +64,15 @@ export default function UsedBy() {
     []
   );
 
-  const trackRef = useRef(null);
-  const [isHovering, setHovering] = useState(false);
-  const [offset, setOffset] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const cardWidth = useRef(0);
-  const autoplayRef = useRef(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [isHovering, setHovering] = useState<boolean>(false);
+  const [offset, setOffset] = useState<number>(0);
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(true);
+  const cardWidth = useRef<number>(0);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   // Triple the items for seamless infinite scroll
-  const items = useMemo(() => [...people, ...people, ...people], [people]);
+  const items: Person[] = useMemo(() => [...people, ...people, ...people], [people]);
 
   const measureCard = () => {
     const track = trackRef.current;
@@ -75,14 +89,12 @@ export default function UsedBy() {
     measureCard();
     const handleResize = () => {
       measureCard();
-      // Reset to middle section on resize
       setIsTransitioning(false);
       setOffset(-cardWidth.current * people.length);
       setTimeout(() => setIsTransitioning(true), 50);
     };
     window.addEventListener("resize", handleResize);
     
-    // Start at the middle clone set
     setIsTransitioning(false);
     setOffset(-cardWidth.current * people.length);
     setTimeout(() => setIsTransitioning(true), 50);
@@ -100,7 +112,6 @@ export default function UsedBy() {
     setOffset((prev) => prev + cardWidth.current);
   };
 
-  // Handle infinite loop reset
   useEffect(() => {
     if (!isTransitioning) return;
 
@@ -109,14 +120,12 @@ export default function UsedBy() {
       const maxOffset = 0;
 
       if (offset <= minOffset) {
-        // Reset to middle section
         setIsTransitioning(false);
         setOffset(-cardWidth.current * people.length);
         requestAnimationFrame(() => {
           setTimeout(() => setIsTransitioning(true), 50);
         });
       } else if (offset >= maxOffset) {
-        // Reset to middle section
         setIsTransitioning(false);
         setOffset(-cardWidth.current * people.length);
         requestAnimationFrame(() => {
@@ -129,7 +138,6 @@ export default function UsedBy() {
     return () => clearTimeout(timer);
   }, [offset, isTransitioning, people.length]);
 
-  // Autoplay
   useEffect(() => {
     if (isHovering) {
       if (autoplayRef.current) {
@@ -150,7 +158,7 @@ export default function UsedBy() {
     };
   }, [isHovering]);
 
-  const onKeyDown = (e) => {
+  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowRight") {
       e.preventDefault();
       slideNext();
@@ -242,9 +250,9 @@ export default function UsedBy() {
       </div>
     </section>
   );
-}
+};
 
-function CarouselButton({ onClick, position = "left", label }) {
+const CarouselButton: FC<CarouselButtonProps> = ({ onClick, position = "left", label }) => {
   return (
     <button
       type="button"
@@ -292,4 +300,6 @@ function CarouselButton({ onClick, position = "left", label }) {
       )}
     </button>
   );
-}
+};
+
+export default UsedBy;

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 
-export default function Hero() {
+const Hero: FC = () => {
   return (
     <div className="relative h-[90vh] w-full">
       <Image
@@ -26,4 +27,6 @@ export default function Hero() {
       </div>
     </div>
   );
-}
+};
+
+export default Hero;
