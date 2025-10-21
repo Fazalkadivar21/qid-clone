@@ -1,7 +1,9 @@
 import qs from "qs";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import MarkdownRenderer from "../../components/MarkdownRenderer";
+import { siteConfig } from "../../utils/seo";
 
 interface ImageFormat {
   url: string;
@@ -44,6 +46,8 @@ interface Article {
   author?: Author;
   category?: Category;
   blocks?: Block[];
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 interface StrapiResponse {
@@ -57,6 +61,78 @@ interface BlogPageProps {
 }
 
 const url = process.env.url || "http://localhost:1337";
+
+// Generate metadata for blog post
+export async function generateMetadata(
+  { params }: BlogPageProps
+): Promise<Metadata> {
+  const { slug } = await params;
+  
+  const query = qs.stringify(
+    {
+      filters: { slug: { $eq: slug } },
+      populate: "*",
+    },
+    { encodeValuesOnly: true }
+  );
+
+  const res = await fetch(`${url}/api/articles?${query}`, {
+    cache: "no-store",
+  });
+  
+  const data: StrapiResponse = await res.json();
+  const blog = data.data?.[0];
+  
+  if (!blog) return { title: "Blog Not Found" };
+
+  const coverUrl =
+    blog.cover?.formats?.large?.url ||
+    blog.cover?.formats?.medium?.url ||
+    blog.cover?.formats?.small?.url ||
+    blog.cover?.url;
+
+  const imageUrl = coverUrl
+    ? coverUrl.startsWith("http")
+      ? coverUrl
+      : `${url}${coverUrl}`
+    : siteConfig.ogImage;
+
+  return {
+    title: blog.title,
+    description: blog.description,
+    keywords: [
+      ...(blog.category?.name ? [blog.category.name] : []),
+      "article",
+      "blog",
+      ...siteConfig.keywords,
+    ].join(", "),
+    alternates: {
+      canonical: `${siteConfig.url}/blogs/${slug}`,
+    },
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      url: `${siteConfig.url}/blogs/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        },
+      ],
+      publishedTime: blog.createdAt,
+      modifiedTime: blog.updatedAt,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.description,
+      images: [imageUrl],
+    },
+  };
+}
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const { slug } = await params;
@@ -86,8 +162,42 @@ export default async function BlogPage({ params }: BlogPageProps) {
     cover?.formats?.small?.url ||
     cover?.url;
 
+  const imageUrl = coverUrl
+    ? coverUrl.startsWith("http")
+      ? coverUrl
+      : `${url}${coverUrl}`
+    : siteConfig.ogImage;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: description,
+    image: imageUrl,
+    datePublished: blog.createdAt,
+    dateModified: blog.updatedAt || blog.createdAt,
+    author: {
+      "@type": "Person",
+      name: author?.name || siteConfig.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/logo.png`,
+      },
+    },
+  };
+
   return (
     <div className="bg-grid">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
+      />
       <article className="max-w-3xl mx-auto py-12 px-5 md:px-0 rounded-3xl shadow-xl">
         {coverUrl && (
           <div className="relative w-full h-72 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">

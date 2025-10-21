@@ -1,6 +1,38 @@
+import { Metadata } from "next";
+import { pageMetadata, siteConfig } from "../utils/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+
+export const metadata: Metadata = {
+  title: pageMetadata.cForm.title,
+  description: pageMetadata.cForm.description,
+  keywords: pageMetadata.cForm.keywords.join(", "),
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  alternates: {
+    canonical: `${siteConfig.url}/c-form`,
+  },
+  openGraph: {
+    title: pageMetadata.cForm.title,
+    description: pageMetadata.cForm.description,
+    url: `${siteConfig.url}/c-form`,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: pageMetadata.cForm.title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageMetadata.cForm.title,
+    description: pageMetadata.cForm.description,
+    images: [siteConfig.ogImage],
+  },
+};
 
 const Btn: FC = () => {
   return (

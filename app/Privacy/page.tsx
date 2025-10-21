@@ -1,4 +1,36 @@
+import { Metadata } from "next";
+import { pageMetadata, siteConfig } from "../utils/seo";
 import { FC, ReactNode } from 'react';
+
+export const metadata: Metadata = {
+  title: pageMetadata.privacy.title,
+  description: pageMetadata.privacy.description,
+  keywords: pageMetadata.privacy.keywords.join(", "),
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  alternates: {
+    canonical: `${siteConfig.url}/Privacy`,
+  },
+  openGraph: {
+    title: pageMetadata.privacy.title,
+    description: pageMetadata.privacy.description,
+    url: `${siteConfig.url}/Privacy`,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: pageMetadata.privacy.title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageMetadata.privacy.title,
+    description: pageMetadata.privacy.description,
+    images: [siteConfig.ogImage],
+  },
+};
 
 interface PolicySectionProps {
   title?: string;

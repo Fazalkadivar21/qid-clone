@@ -2,6 +2,64 @@ import qs from "qs";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import { Metadata } from "next";
+import { pageMetadata, siteConfig } from "../utils/seo";
+
+interface Article {
+  id: string | number;
+  title: string;
+  description: string;
+  slug: string;
+  cover?: {
+    url: string;
+    alternativeText?: string;
+    formats?: {
+      medium?: { url: string };
+      small?: { url: string };
+      thumbnail?: { url: string };
+    };
+  };
+  author?: {
+    name: string;
+  };
+  category?: {
+    name: string;
+  };
+}
+
+interface BlogsResponse {
+  data: Article[];
+}
+
+export const metadata: Metadata = {
+  title: pageMetadata.blogs.title,
+  description: pageMetadata.blogs.description,
+  keywords: pageMetadata.blogs.keywords.join(", "),
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  alternates: {
+    canonical: `${siteConfig.url}/blogs`,
+  },
+  openGraph: {
+    title: pageMetadata.blogs.title,
+    description: pageMetadata.blogs.description,
+    url: `${siteConfig.url}/blogs`,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: pageMetadata.blogs.title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageMetadata.blogs.title,
+    description: pageMetadata.blogs.description,
+    images: [siteConfig.ogImage],
+  },
+};
 
 interface Article {
   id: string | number;
@@ -45,7 +103,7 @@ const BlogsPage: FC = async () => {
     cache: "no-store",
   });
   const data: BlogsResponse = await res.json();
-  const articles = data.data || [];
+  const articles = data.data.reverse() || [];
 
   return (
     <div className="bg-grid min-h-screen px-4 md:px-40 py-16 raleway-medium">
