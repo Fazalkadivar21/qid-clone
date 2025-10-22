@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 
 const ForBusiness: FC = () => {
   return (
@@ -18,9 +19,11 @@ const ForBusiness: FC = () => {
 
         {/* Main Image - Full width display */}
         
-          <img 
+          <Image 
             src="/images/home/qd-ffvc-2-sdf.png" 
             alt="QID for Business - Manage all IDs with one QR" 
+            width={1200}
+            height={1200}
             className="w-full h-screen md:h-auto object-cover"
           />
 
@@ -30,7 +33,7 @@ const ForBusiness: FC = () => {
               {/* QR Card */}
               <div className="rounded-3xl bg-white/5 border border-white/10 p-8 backdrop-blur-sm">
                 <div className="bg-white rounded-xl aspect-square flex items-center justify-center">
-                  <img src="/images/home/qr-code.png" alt="QR" className="rounded-xl object-contain" />
+                  <Image src="/images/home/qr-code.png" alt="QR" width={500} height={500} className="rounded-xl object-contain" />
                 </div>
                 <h3 className="text-white text-2xl font-bold mt-6">Collect IDs with QR</h3>
                 <p className="text-gray-400 mt-2">Easy to setup QR code stand</p>
@@ -39,26 +42,26 @@ const ForBusiness: FC = () => {
               {/* Analytics Panel - span 2 cols on large */}
               <div className="rounded-3xl bg-white/5 border border-white/10 p-6 lg:col-span-2 backdrop-blur-sm">
                 <h3 className="text-white text-2xl font-bold mb-4">Business Analytics</h3>
-                <img src="/images/home/Asset-7.png" alt="Business Analytics" className="w-full h-auto" />
+                <Image src="/images/home/Asset-7.png" alt="Business Analytics" width={800} height={400} className="w-full h-auto" />
                 <p className="text-gray-400 mt-4">Unlock the power of data with qid – your ultimate tool for comprehensive business analytics.</p>
               </div>
 
               {/* Customized Interface */}
               <div className="rounded-3xl bg-white/5 border border-white/10 p-8 backdrop-blur-sm">
                 <h3 className="text-white text-2xl font-bold">Customized Interface</h3>
-                <p className="text-gray-400 mt-2">Tailor qid's interface to perfectly align with your brand, creating a seamless and personalized user experience.</p>
+                <p className="text-gray-400 mt-2">Tailor qid&apos;s interface to perfectly align with your brand, creating a seamless and personalized user experience.</p>
               </div>
 
               {/* Developer APIs */}
               <div className="rounded-3xl bg-white/5 border border-white/10 p-8 backdrop-blur-sm">
                 <h3 className="text-white text-2xl font-bold">Developer APIs</h3>
-                <p className="text-gray-400 mt-2">Supercharge your applications with qid's robust developer APIs, enabling you to effortlessly leverage the full potential of our platform and create unique, personalized experiences for your users.</p>
+                <p className="text-gray-400 mt-2">Supercharge your applications with qid&apos;s robust developer APIs, enabling you to effortlessly leverage the full potential of our platform and create unique, personalized experiences for your users.</p>
               </div>
 
               {/* One-Click C-Form */}
               <div className="rounded-3xl bg-white/5 border border-white/10 p-8 backdrop-blur-sm">
                 <h3 className="text-white text-2xl font-bold">One-Click C-Form</h3>
-                <p className="text-gray-400 mt-2">Simplify C-Form filling with qid's 1-Click solution, automating the process and saving you time while ensuring compliance.</p>
+                <p className="text-gray-400 mt-2">Simplify C-Form filling with qid&apos;s 1-Click solution, automating the process and saving you time while ensuring compliance.</p>
               </div>
             </div>
 

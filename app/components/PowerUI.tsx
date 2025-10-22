@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 
 interface InfoProps {
   title: string;
@@ -34,17 +35,21 @@ const PowerUI: FC = () => {
               <ul className="flex flex-col gap-2">
                 <li className="py-4 px-6 w-full text-xl border border-[#7b7b7b] rounded-2xl flex items-center justify-between">
                   <p>Aadhaar </p>
-                  <img
+                  <Image
                     src="/images/qr-checkin/correct.svg"
                     alt="correct"
+                    width={24}
+                    height={24}
                     className="h-6 w-6"
                   />
                 </li>
                 <li className="py-4 px-6 w-full text-xl border border-[#7b7b7b] rounded-2xl flex items-center justify-between">
                   <p>Driving License</p>
-                  <img
+                  <Image
                     src="/images/qr-checkin/correct.svg"
                     alt="correct"
+                    width={24}
+                    height={24}
                     className="h-6 w-6"
                   />
                 </li>
@@ -84,9 +89,11 @@ Say goodbye to manual processes and hello to seamless efficiency!"
                 </li>
                 <li className="py-4 px-6 w-full text-xl border border-[#7b7b7b] rounded-2xl flex items-center justify-between">
                   <p>And More </p>
-                  <img
+                  <Image
                     src="/images/qr-checkin/plus.svg"
                     alt="correct"
+                    width={24}
+                    height={24}
                     className="h-6 w-6"
                   />
                 </li>
@@ -104,16 +111,20 @@ Say goodbye to manual processes and hello to seamless efficiency!"
             <div className="w-full md:w-1/3 flex flex-col gap-5 bg-white p-8 raleway-semibold rounded-2xl text-black border-4 border-amber-300">
               <div className="flex items-center justify-between">
                 <p className="text-2xl">Signature</p>{" "}
-                <img
+                <Image
                   src="/images/qr-checkin/toggle-switch.jpg"
                   alt=""
+                  width={56}
+                  height={56}
                   className="h-14 w-14"
                 />
               </div>
               <div className="flex flex-col gap-2 items-center bg-[#cecece] rounded-2xl p-8 ">
-                <img
+                <Image
                   src="/images/qr-checkin/signature.png"
                   alt=""
+                  width={160}
+                  height={160}
                   className="h-40 w-40"
                 />
               </div>
@@ -140,9 +151,11 @@ Say goodbye to manual processes and hello to seamless efficiency!"
                 </div>
                 <div className="flex items-center justify-between mt-10">
                   <p className="text-2xl">I Agree</p>
-                  <img
+                  <Image
                     src="/images/qr-checkin/checkbox.svg"
                     alt=""
+                    width={24}
+                    height={24}
                     className="h-6 w-6"
                   />
                 </div>

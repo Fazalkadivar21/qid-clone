@@ -41,6 +41,7 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
             </a>
           ),
           img: ({ src, alt, ...props }) => (
+            // eslint-disable-next-line @next/next/no-img-element
             <img src={src} alt={alt} className="rounded-lg max-w-full my-4" {...props} />
           ),
           h1: ({ children, ...props }) => (

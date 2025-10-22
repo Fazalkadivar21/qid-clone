@@ -156,7 +156,7 @@ const UsedBy: FC = () => {
         clearInterval(autoplayRef.current);
       }
     };
-  }, [isHovering]);
+  }, [isHovering, slideNext]);
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowRight") {

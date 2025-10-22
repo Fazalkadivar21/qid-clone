@@ -117,7 +117,7 @@ const Elevate: FC = () => {
             Extension
           </h2>
           <p className="mt-4 text-xl raleway-semibold text-[#7a7a7a]">
-            Simplify C-Form management like never before with qid's
+            Simplify C-Form management like never before with qid&apos;s
             revolutionary Chrome extension.
           </p>
 
@@ -148,7 +148,7 @@ const Cinfo: FC = () => {
       <h2 className="text-5xl raleway-semibold">What is C-Form?</h2>
       <p className="text-2xl raleway-regular">
         In India, a <a href="https://indianfrro.gov.in/frro/" target="_blank" rel="noopener noreferrer" className="font-extrabold underline">C-Form</a> is a mandatory document required under the
-        Foreigners' Registration Act, 1946.
+        Foreigners&apos; Registration Act, 1946.
       </p>
       <p className="text-2xl raleway-regular">
         It serves as a record of the stay of foreign nationals within the
@@ -157,7 +157,7 @@ const Cinfo: FC = () => {
       <p className="text-2xl raleway-regular">
         Hotels, guesthouses, and other accommodation providers are legally
         obligated to submit C-Forms to local authorities for every foreign
-        guest's stay.
+        guest&apos;s stay.
       </p>
       <div className="px-6 py-4 text-xl raleway-bold border border-[#7a7a7a] rounded-full w-fit">
         <Link href="/c-form">Read more</Link>
