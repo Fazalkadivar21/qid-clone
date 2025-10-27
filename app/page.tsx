@@ -1,19 +1,21 @@
-import Hero from "./components/home/Hero";
-import SecureEasy from "./components/home/SecureEasy";
-import ForBusiness from "./components/home/ForBusiness";
-import UsedBy from "./components/home/UsedBy";
-import QrCheckin from "./components/QrCheckin";
-import BookDemo from "./components/BookDemo";
+// import Hero from "./components/home/Hero";
+// import SecureEasy from "./components/home/SecureEasy";
+// import ForBusiness from "./components/home/ForBusiness";
+// import UsedBy from "./components/home/UsedBy";
+// import QrCheckin from "./components/QrCheckin";
+// import BookDemo from "./components/BookDemo";
+import BlogsPage from "./blogs/page";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero />
       <SecureEasy />
       <ForBusiness />
       <UsedBy />
       <QrCheckin />
-      <BookDemo />
+      <BookDemo /> */}
+      <BlogsPage/>
     </>
   );
 }

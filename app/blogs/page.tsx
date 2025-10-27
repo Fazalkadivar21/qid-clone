@@ -90,6 +90,7 @@ interface BlogsResponse {
 const query = qs.stringify(
   {
     populate: ["cover", "author", "category"],
+    sort: ["createdAt:desc"]
   },
   {
     encodeValuesOnly: true,
@@ -103,7 +104,7 @@ const BlogsPage: FC = async () => {
     cache: "no-store",
   });
   const data: BlogsResponse = await res.json();
-  const articles = data.data.reverse() || [];
+  const articles = data.data || [];
 
   return (
     <div className="bg-grid min-h-screen px-4 md:px-40 py-16 raleway-medium">
@@ -128,7 +129,7 @@ const BlogsPage: FC = async () => {
           return (
             <Link
               key={id}
-              href={`/blogs/${slug}`}
+              href={`/${slug}`}
               className="bg-white rounded-2xl shadow-xl p-6 flex flex-col border border-gray-100"
               style={{ minHeight: 420 }}
             >
