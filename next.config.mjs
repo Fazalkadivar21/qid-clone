@@ -12,7 +12,7 @@ const nextConfig = {
 			},
 			{
 				protocol: 'https',
-				hostname: '**.strapi.io',
+				hostname: '**.strapiapp.com',
 			},
 		],
 		// Enable AVIF format for better compression
