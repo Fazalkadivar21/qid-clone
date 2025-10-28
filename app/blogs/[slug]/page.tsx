@@ -205,7 +205,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
       <div className="max-w-3xl mx-auto pt-8 px-5 md:px-0">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition font-semibold mb-8"
+          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition font-semibold"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -214,7 +214,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </Link>
       </div>
 
-      <article className="max-w-3xl mx-auto py-12 px-5 md:px-0 rounded-3xl shadow-xl">
+      <article className="max-w-3xl mx-auto py-12 px-5 md:px-6 rounded-3xl shadow-xl">
         {coverUrl && (
           <div className="relative w-full h-72 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">
             <Image
@@ -252,7 +252,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
       </article>
 
       {/* Related Blogs Carousel */}
-      <div className="max-w-6xl mx-auto py-16 px-4 md:px-40">
+      <div className="max-w-screen md:max-w-4xl mx-auto py-16 px-4">
         <RelatedBlogs 
           currentSlug={slug} 
           categoryName={category?.name}

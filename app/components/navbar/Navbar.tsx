@@ -35,16 +35,16 @@ const Navbar: FC = () => {
         <div className="hidden md:block">
           <ul className="flex items-center gap-10 text-md raleway-semibold text-[#7a7a7a]">
             <li>
-              <Link href="https://oneqid.com/app/" className="hover:text-gray-100 transition">App</Link>
+              <Link href="https://oneqid.com/app/" target="_blank" className="hover:text-gray-100 transition">App</Link>
             </li>
             <li>
-              <Link href="https://oneqid.com/qr-based-check-in-software/" className="hover:text-gray-100 transition">QR Check-In</Link>
+              <Link href="https://oneqid.com/qr-based-check-in-software/" target="_blank" className="hover:text-gray-100 transition">QR Check-In</Link>
             </li>
             <li>
-              <Link href="https://oneqid.com/home/c-form-automation-for-hotels/" className="hover:text-gray-100 transition">C-Form Pro</Link>
+              <Link href="https://oneqid.com/home/c-form-automation-for-hotels/" target="_blank" className="hover:text-gray-100 transition">C-Form Pro</Link>
             </li>
             <li>
-              <Link href="https://oneqid.com/support/" className="hover:text-gray-100 transition">Contact</Link>
+              <Link href="https://oneqid.com/support/" target="_blank" className="hover:text-gray-100 transition">Contact</Link>
             </li>
           </ul>
         </div>

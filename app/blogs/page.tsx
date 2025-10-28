@@ -107,7 +107,7 @@ const BlogsPage: FC = async () => {
   const articles = data.data || [];
 
   return (
-    <div className="bg-grid min-h-screen px-4 md:px-40 py-16 raleway-medium">
+    <div className="bg-grid min-h-screen px-4 md:px-10 lg:px-40 py-16 raleway-medium">
       <h1 className="text-4xl md:text-5xl font-extrabold mb-12 tracking-tight raleway-bold drop-shadow-lg">
         Latest Articles
       </h1>

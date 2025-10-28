@@ -27,7 +27,7 @@ const Footer: FC = () => {
                 <Link href="https://chromewebstore.google.com/detail/qid-c-form-pro/afghjacdcfhoikcccemlchhmokfgobpj" target="_blank" className="hover:text-white transition">C-Form Pro Plugin</Link>
               </li>
               <li>
-                <Link href="https://oneqid.com/book-qid-demo/" className="hover:text-white transition">Book a Demo</Link>
+                <Link href="https://oneqid.com/book-qid-demo/" target="_blank" className="hover:text-white transition">Book a Demo</Link>
               </li>
             </ul>
           </div>
@@ -37,16 +37,16 @@ const Footer: FC = () => {
             <h3 className="md:text-xl lg:text-2xl font-semibold">Legal</h3>
             <ul className="space-y-4 text-white lg:w-2/3">
               <li>
-                <Link href="https://oneqid.com/privacy-policy/" className="hover:text-white transition">Privacy Policy</Link>
+                <Link href="https://oneqid.com/privacy-policy/" target="_blank" className="hover:text-white transition">Privacy Policy</Link>
               </li>
               <li>
-                <Link href="https://oneqid.com/terms-of-use/" className="hover:text-white transition">Terms of Use</Link>
+                <Link href="https://oneqid.com/terms-of-use/" target="_blank" className="hover:text-white transition">Terms of Use</Link>
               </li>
               <li>
-                <Link href="https://oneqid.com/cancellation-and-refund-policy/" className="hover:text-white transition">Cancellation and Refund Policy</Link>
+                <Link href="https://oneqid.com/cancellation-and-refund-policy/" target="_blank" className="hover:text-white transition">Cancellation and Refund Policy</Link>
               </li>
               <li>
-                <Link href="https://oneqid.com/shipping-and-return-policy/" className="hover:text-white transition">Shipping and Return Policy</Link>
+                <Link href="https://oneqid.com/shipping-and-return-policy/" target="_blank" className="hover:text-white transition">Shipping and Return Policy</Link>
               </li>
             </ul>
           </div>
