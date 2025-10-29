@@ -4,19 +4,19 @@ import { FC } from "react";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-black text-white flex flex-col items-center border-t border-[#7a7a7a]">
+    <footer className="bg-white text-black flex flex-col items-center border-t border-[#7a7a7a]">
       {/* Main Footer Content */}
       <div className="w-full md:max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Logo Section */}
           <div className="md:col-span-2 flex items-center">
-            <h2 className="poppins-bold-italic text-7xl text-[#cecece] tracking-wide">qid</h2>
+            <h2 className="poppins-bold-italic text-7xl text-[#434343] tracking-wide">qid</h2>
           </div>
 
           {/* Download App Section */}
           <div className="raleway-regular flex flex-col gap-5">
             <h3 className="md:text-xl lg:text-2xl font-semibold">Download App</h3>
-            <ul className="space-y-4 text-white lg:w-2/3">
+            <ul className="space-y-4 text-[#434343] lg:w-2/3">
               <li>
                 <Link href="https://play.google.com/store/apps/details?id=com.quickids.digilocker.qid" target="_blank" className="hover:text-white transition">Android</Link>
               </li>
@@ -35,7 +35,7 @@ const Footer: FC = () => {
           {/* Legal Section */}
           <div className="raleway-regular flex flex-col gap-5">
             <h3 className="md:text-xl lg:text-2xl font-semibold">Legal</h3>
-            <ul className="space-y-4 text-white lg:w-2/3">
+            <ul className="space-y-4 text-[#434343] lg:w-2/3">
               <li>
                 <Link href="https://oneqid.com/privacy-policy/" target="_blank" className="hover:text-white transition">Privacy Policy</Link>
               </li>
@@ -54,7 +54,7 @@ const Footer: FC = () => {
       </div>
 
       {/* Bottom Section with Border */}
-      <div className="border-t border-white/20 mb-16 w-full lg:w-[70%]">
+      <div className="border-t border-black mb-16 w-full lg:w-[70%]">
         <div className="max-w-6xl mx-auto py-6 flex flex-col-reverse items-center gap-2 md:flex md:flex-row md:items-center md:justify-between">
           <p className="text-sm md:text-xl">Oneqid Technologies Private Limited</p>
           <Link href="https://www.linkedin.com/company/oneqid" target="_blank" className="hover:opacity-80 transition">

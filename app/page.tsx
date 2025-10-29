@@ -8,7 +8,7 @@ import BlogsPage from "./blogs/page";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-white flex items-center justify-center">
       {/* <Hero />
       <SecureEasy />
       <ForBusiness />
@@ -16,6 +16,6 @@ export default function Home() {
       <QrCheckin />
       <BookDemo /> */}
       <BlogsPage/>
-    </>
+    </div>
   );
 }

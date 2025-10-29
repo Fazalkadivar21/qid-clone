@@ -6,18 +6,18 @@ const Navbar: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <header className="w-full sticky top-0 z-50 border-b border-white/20 bg-black">
+    <header className="w-full sticky top-0 z-50 border-b border-white/20 bg-white">
       <nav className="max-w-6xl mx-auto px-6 h-22 flex items-center justify-between">
         <div className="flex-shrink-0">
           <Link href="/" className="inline-block">
-            <h1 className="poppins-semi-italic text-4xl text-[#cecece] tracking-wide">qid</h1>
+            <h1 className="poppins-semi-italic text-4xl text-[#434343] tracking-wide">qid</h1>
           </Link>
         </div>
 
         {/* Hamburger Button - Hidden on tablet and up */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[#7a7a7a] hover:text-gray-100 transition z-50 relative"
+          className="md:hidden text-[#434343] hover:text-gray-100 transition z-50 relative"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -56,7 +56,7 @@ const Navbar: FC = () => {
               <li className="border-b border-white/20">
                 <Link 
                   href="/app" 
-                  className="block px-6 py-2 bg-[#4c4c4c] hover:text-gray-100 transition"
+                  className="block px-6 py-2 bg-white text-black hover:text-gray-100 transition"
                   onClick={() => setIsOpen(false)}
                 >
                   App
@@ -65,7 +65,7 @@ const Navbar: FC = () => {
               <li className="border-b border-white/20">
                 <Link 
                   href="/qr-check-in"
-                  className="block px-6 py-2 bg-[#4c4c4c] hover:text-gray-100 transition"
+                  className="block px-6 py-2 bg-white text-black hover:text-gray-100 transition"
                   onClick={() => setIsOpen(false)}
                 >
                   QR Check-In
@@ -74,7 +74,7 @@ const Navbar: FC = () => {
               <li className="border-b border-white/20">
                 <Link 
                   href="/c-form"
-                  className="block px-6 py-3 bg-[#4c4c4c] hover:text-gray-100 transition"
+                  className="block px-6 py-3 bg-white text-black hover:text-gray-100 transition"
                   onClick={() => setIsOpen(false)}
                 >
                   C-Form Pro
@@ -83,7 +83,7 @@ const Navbar: FC = () => {
               <li className="border-b border-white/20">
                 <Link 
                   href="/contact"
-                  className="block px-6 py-3 bg-[#4c4c4c] hover:text-gray-100 transition"
+                  className="block px-6 py-3 bg-white text-black hover:text-gray-100 transition"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact
