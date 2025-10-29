@@ -193,7 +193,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
   };
 
   return (
-    <div className="bg-grid min-h-screen">
+    <div className="bg-white min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -205,7 +205,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
       <div className="max-w-3xl mx-auto pt-8 px-5 md:px-0">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition font-semibold"
+          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition font-semibold"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -214,7 +214,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </Link>
       </div>
 
-      <article className="max-w-3xl mx-auto py-12 px-5 md:px-6 rounded-3xl shadow-xl">
+      <article className="max-w-3xl mx-auto py-12 px-5 md:px-6 rounded-3xl shadow-lg bg-white border border-gray-200">
         {coverUrl && (
           <div className="relative w-full h-72 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">
             <Image
@@ -227,24 +227,24 @@ export default async function BlogPage({ params }: BlogPageProps) {
             />
           </div>
         )}
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white raleway-bold">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-black raleway-bold">
           {title}
         </h1>
         <div className="mb-4"></div>
-        <div className="flex flex-wrap gap-4 items-center mb-6 text-gray-200 text-base">
+        <div className="flex flex-wrap gap-4 items-center mb-6 text-gray-700 text-base">
           <span>
             By{" "}
-            <span className="font-semibold text-white">
+            <span className="font-semibold text-black">
               {author?.name || "Unknown"}
             </span>
           </span>
-          <span className="text-gray-300">•</span>
-          <span className="px-2 py-0.5 rounded text-gray-100 text-sm">
+          <span className="text-gray-400">•</span>
+          <span className="px-2 py-0.5 rounded text-black text-sm bg-gray-100">
             {category?.name || "Uncategorized"}
           </span>
         </div>
-        <p className="text-2xl text-gray-100 mb-8">{description}</p>
-        <div className="prose prose-lg max-w-none prose-invert">
+        <p className="text-2xl text-gray-900 mb-8">{description}</p>
+        <div className="prose prose-lg max-w-none">
           {blocks?.map((block,id) => (
             <MarkdownRenderer key={id}>{block.body}</MarkdownRenderer>
           ))}

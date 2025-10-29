@@ -107,14 +107,14 @@ const BlogsPage: FC = async () => {
   const articles = data.data || [];
 
   return (
-    <div className="bg-grid min-h-screen px-4 md:px-10 lg:px-40 py-16 raleway-medium">
-      <h1 className="text-4xl md:text-5xl font-extrabold mb-12 tracking-tight raleway-bold drop-shadow-lg">
+    <div className="bg-white min-h-screen px-4 md:px-10 lg:px-40 py-16 raleway-medium">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-12 tracking-tight raleway-bold drop-shadow-lg text-black">
         Latest Articles
       </h1>
       <div className="mb-12"></div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {articles.length === 0 && (
-          <div className="col-span-full text-center text-lg">
+          <div className="col-span-full text-center text-lg text-black">
             No articles found.
           </div>
         )}
@@ -152,16 +152,16 @@ const BlogsPage: FC = async () => {
                 {title}
               </h2>
               <div className="mb-4"></div>
-              <div className="flex items-center gap-2 text-gray-600 text-base md:text-lg mb-1">
+              <div className="flex items-center gap-2 text-gray-700 text-base md:text-lg mb-1">
                 <span className="font-semibold">
                   By {author?.name || "Unknown"}
                 </span>
-                <span className="mx-2 text-gray-300">•</span>
-                <span className="text-sm md:text-base px-2 py-0.5 rounded bg-gray-100 text-gray-700">
+                <span className="mx-2 text-gray-400">•</span>
+                <span className="text-sm md:text-base px-2 py-0.5 rounded bg-gray-200 text-black">
                   {category?.name || "Uncategorized"}
                 </span>
               </div>
-              <p className="text-gray-700 text-base md:text-lg mt-3 line-clamp-3">
+              <p className="text-gray-800 text-base md:text-lg mt-3 line-clamp-3">
                 {description}
               </p>
             </Link>
