@@ -101,7 +101,7 @@ const url = process.env.url || "http://localhost:1337";
 
 const BlogsPage: FC = async () => {
   const res = await fetch(`${url}/api/articles?${query}`, {
-    cache: "no-store",
+    next: { revalidate: 3600 }, // Revalidate every hour
   });
   const data: BlogsResponse = await res.json();
   const articles = data.data || [];

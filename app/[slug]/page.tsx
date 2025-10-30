@@ -64,6 +64,32 @@ interface BlogPageProps {
 
 const url = process.env.url || "http://localhost:1337";
 
+// Generate static params for all articles
+export async function generateStaticParams() {
+  try {
+    const query = qs.stringify(
+      {
+        fields: ["slug"],
+        pagination: { pageSize: 1000 },
+      },
+      { encodeValuesOnly: true }
+    );
+
+    const res = await fetch(`${url}/api/articles?${query}`, {
+      cache: "no-store",
+    });
+    
+    const data: StrapiResponse = await res.json();
+    
+    return data.data.map((article) => ({
+      slug: article.slug,
+    }));
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
+}
+
 // Generate metadata for blog post
 export async function generateMetadata(
   { params }: BlogPageProps
@@ -79,7 +105,7 @@ export async function generateMetadata(
   );
 
   const res = await fetch(`${url}/api/articles?${query}`, {
-    cache: "no-store",
+    next: { revalidate: 3600 }, // Revalidate every hour
   });
   
   const data: StrapiResponse = await res.json();
@@ -148,7 +174,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
   );
 
   const res = await fetch(`${url}/api/articles?${query}`, {
-    cache: "no-store",
+    next: { revalidate: 3600 }, // Revalidate every hour
   });
   
   const data: StrapiResponse = await res.json();
