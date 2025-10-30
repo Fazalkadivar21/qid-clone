@@ -119,7 +119,7 @@ const BlogsPage: FC = async () => {
           </div>
         )}
         {articles.map((article) => {
-          const { id, title, description, cover, author, category, slug } =
+          const { id, title, cover, author, category, slug } =
             article;
           const coverUrl =
             cover?.formats?.medium?.url ||
@@ -133,7 +133,7 @@ const BlogsPage: FC = async () => {
               className="bg-white rounded-2xl shadow-xl p-6 flex flex-col border border-gray-100"
               style={{ minHeight: 420 }}
             >
-              {coverUrl && (
+              {coverUrl ? (
                 <div className="relative w-full h-52 mb-6 rounded-xl overflow-hidden shadow-sm">
                   <Image
                     src={
@@ -147,6 +147,8 @@ const BlogsPage: FC = async () => {
                     className="object-cover rounded-xl"
                   />
                 </div>
+              ) : (
+                <div className="w-full h-52 mb-6 rounded-xl overflow-hidden shadow-sm bg-gray-200 animate-pulse"></div>
               )}
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 raleway-semibold line-clamp-2">
                 {title}
@@ -161,9 +163,6 @@ const BlogsPage: FC = async () => {
                   {category?.name || "Uncategorized"}
                 </span>
               </div>
-              <p className="text-gray-800 text-base md:text-lg mt-3 line-clamp-3">
-                {description}
-              </p>
             </Link>
           );
         })}

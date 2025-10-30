@@ -214,8 +214,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </Link>
       </div>
 
-      <article className="max-w-6xl lg:mx-6 mx-4 py-12 px-4 md:px-6 rounded-3xl shadow-lg bg-white border border-gray-200">
-        {coverUrl && (
+      <article className="w-6xl lg:mx-6 mx-4 py-12 px-4 md:px-6 rounded-3xl shadow-lg bg-white border border-gray-200">
+        {coverUrl ? (
           <div className="relative w-full h-72 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">
             <Image
               src={coverUrl.startsWith("http") ? coverUrl : `${url}${coverUrl}`}
@@ -226,6 +226,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
               priority
             />
           </div>
+        ) : (
+          <div className="w-full h-72 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg bg-gray-200 animate-pulse"></div>
         )}
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-black raleway-bold">
           {title}
@@ -245,9 +247,19 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </div>
         <p className="text-2xl text-gray-900 mb-8">{description}</p>
         <div className="prose prose-lg max-w-none">
-          {blocks?.map((block,id) => (
-            <MarkdownRenderer key={id}>{block.body}</MarkdownRenderer>
-          ))}
+          {blocks && blocks.length > 0 ? (
+            blocks.map((block, id) => (
+              <MarkdownRenderer key={id}>{block.body}</MarkdownRenderer>
+            ))
+          ) : (
+            <div className="space-y-4">
+              <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse w-4/6"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
+            </div>
+          )}
         </div>
       </article>
 

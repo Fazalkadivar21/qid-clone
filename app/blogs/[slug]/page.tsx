@@ -193,7 +193,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen flex flex-col items-center justify-center text-black raleway-regular">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -202,7 +202,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
       />
       
       {/* Back Button */}
-      <div className="max-w-3xl mx-auto pt-8 px-5 md:px-0">
+      <div className="min-w-6xl flex items-start justify-start mx-auto pt-8 px-5 md:px-4 mb-4">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition font-semibold"
@@ -214,8 +214,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </Link>
       </div>
 
-      <article className="max-w-3xl mx-auto py-12 px-5 md:px-6 rounded-3xl shadow-lg bg-white border border-gray-200">
-        {coverUrl && (
+      <article className="w-6xl lg:mx-6 mx-4 py-12 px-4 md:px-6 rounded-3xl shadow-lg bg-white border border-gray-200">
+        {coverUrl ? (
           <div className="relative w-full h-72 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">
             <Image
               src={coverUrl.startsWith("http") ? coverUrl : `${url}${coverUrl}`}
@@ -226,6 +226,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
               priority
             />
           </div>
+        ) : (
+          <div className="w-full h-72 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg bg-gray-200 animate-pulse"></div>
         )}
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-black raleway-bold">
           {title}
@@ -245,14 +247,24 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </div>
         <p className="text-2xl text-gray-900 mb-8">{description}</p>
         <div className="prose prose-lg max-w-none">
-          {blocks?.map((block,id) => (
-            <MarkdownRenderer key={id}>{block.body}</MarkdownRenderer>
-          ))}
+          {blocks && blocks.length > 0 ? (
+            blocks.map((block, id) => (
+              <MarkdownRenderer key={id}>{block.body}</MarkdownRenderer>
+            ))
+          ) : (
+            <div className="space-y-4">
+              <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse w-4/6"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
+            </div>
+          )}
         </div>
       </article>
 
       {/* Related Blogs Carousel */}
-      <div className="max-w-screen md:max-w-4xl mx-auto py-16 px-4">
+      <div className="max-w-screen md:max-w-7xl mx-auto py-16 px-4">
         <RelatedBlogs 
           currentSlug={slug} 
           categoryName={category?.name}
