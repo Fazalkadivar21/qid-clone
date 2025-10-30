@@ -35,7 +35,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build Next.js static export
-        run: pnpm run build:static
+        run: pnpm run build
         env:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.FIREBASE_HOSTING_DOMAIN }}
 
