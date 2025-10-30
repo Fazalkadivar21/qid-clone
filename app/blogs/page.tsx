@@ -97,7 +97,7 @@ const query = qs.stringify(
   }
 );
 
-const url = process.env.url || "http://localhost:1337";
+const url = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 
 const BlogsPage: FC = async () => {
   let articles: Article[] = [];
