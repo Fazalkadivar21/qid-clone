@@ -7,6 +7,7 @@ import MarkdownRenderer from "../../components/MarkdownRenderer";
 import RelatedBlogs from "../../components/RelatedBlogs";
 import { siteConfig } from "../../utils/seo";
 
+
 interface ImageFormat {
   url: string;
   width?: number;
@@ -91,7 +92,7 @@ export async function generateStaticParams() {
       slug: article.slug,
     }));
   } catch (error) {
-    console.warn("Error generating static params for /blogs/[slug]:", error instanceof Error ? error.message : String(error));
+    console.warn("Error generating static params for /[slug]:", error instanceof Error ? error.message : String(error));
     return [];
   }
 }
@@ -195,7 +196,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     if (!blog) return notFound();
 
     const { title, description, cover, author, category, blocks } = blog;
-    
+  
     const coverUrl =
       cover?.formats?.large?.url ||
       cover?.formats?.medium?.url ||
@@ -240,7 +241,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         />
         
         {/* Back Button */}
-        <div className="min-w-6xl flex items-start justify-start mx-auto pt-8 px-5 md:px-4 mb-4">
+        <div className="w-dvw md:w-3xl lg:w-5xl xl:w-6xl flex items-start justify-start mx-auto pt-8 px-5 md:px-4 mb-4">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition font-semibold"
@@ -252,7 +253,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
           </Link>
         </div>
 
-        <article className="w-6xl lg:mx-6 mx-4 py-12 px-4 md:px-6 rounded-3xl shadow-lg bg-white border border-gray-200">
+        <article className="w-[90%] md:w-3xl lg:w-5xl xl:w-6xl lg:mx-6 mx-4 py-12 px-4 md:px-6 rounded-3xl shadow-lg bg-white border border-gray-200">
           {coverUrl ? (
             <div className="relative w-full h-72 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">
               <Image
