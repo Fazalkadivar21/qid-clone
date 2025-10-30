@@ -48,7 +48,7 @@ jobs:
             ${{ runner.os }}-nextjs-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
         continue-on-error: false
 
       - name: Lint TypeScript and ESLint
@@ -58,7 +58,7 @@ jobs:
       - name: Build Next.js static export
         run: pnpm run build
         env:
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.FIREBASE_HOSTING_DOMAIN || 'https://oneqid.com' }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.FIREBASE_HOSTING_DOMAIN }}
           NEXT_PUBLIC_STRAPI_URL: ${{ secrets.NEXT_PUBLIC_STRAPI_URL }}
           STRAPI_API_TOKEN: ${{ secrets.STRAPI_API_TOKEN }}
           # Increase Node.js memory for builds
