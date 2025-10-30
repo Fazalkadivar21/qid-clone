@@ -17,13 +17,15 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 8
-      - uses: actions/checkout@v4
+
+      - name: Install dependencies and build
         env:
           url: ${{ secrets.NEXT_PUBLIC_STRAPI_URL }}
-      - run: pnpm install --no-frozen-lockfile && pnpm build
+          NEXT_PUBLIC_STRAPI_URL: ${{ secrets.NEXT_PUBLIC_STRAPI_URL }}
+        run: pnpm install --no-frozen-lockfile && pnpm build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QID_CLONE }}
           channelId: live
           projectId: qid-clone
