@@ -26,21 +26,15 @@ jobs:
         with:
           version: 8
 
-      - name: Setup Node.js with pnpm cache
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
         continue-on-error: false
 
       - name: Build Next.js static export
-        run: pnpm run build
         env:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.FIREBASE_HOSTING_DOMAIN }}
           NEXT_PUBLIC_STRAPI_URL: ${{ secrets.NEXT_PUBLIC_STRAPI_URL }}
+        run: pnpm build
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
