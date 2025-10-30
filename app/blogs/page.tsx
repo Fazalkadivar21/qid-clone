@@ -100,11 +100,23 @@ const query = qs.stringify(
 const url = process.env.url || "http://localhost:1337";
 
 const BlogsPage: FC = async () => {
-  const res = await fetch(`${url}/api/articles?${query}`, {
-    next: { revalidate: 3600 }, // Revalidate every hour
-  });
-  const data: BlogsResponse = await res.json();
-  const articles = data.data || [];
+  let articles: Article[] = [];
+  
+  try {
+    const res = await fetch(`${url}/api/articles?${query}`, {
+      next: { revalidate: 3600 }, // Revalidate every hour
+    });
+    
+    if (!res.ok) {
+      console.warn(`Failed to fetch articles: ${res.status}`);
+    } else {
+      const data: BlogsResponse = await res.json();
+      articles = data.data || [];
+    }
+  } catch (error) {
+    console.warn("Error fetching articles:", error instanceof Error ? error.message : String(error));
+    // Return graceful fallback with no articles
+  }
 
   return (
     <div className="bg-white min-h-screen px-4 xl:max-w-6xl py-16 raleway-medium">
