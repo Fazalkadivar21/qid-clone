@@ -78,6 +78,7 @@ export async function generateStaticParams() {
 
     const res = await fetch(`${apiUrl}/api/articles?${query}`, {
       next: { revalidate: 3600 },
+      signal: AbortSignal.timeout(15000), // 15 second timeout
     });
     
     if (!res.ok) {
@@ -112,6 +113,7 @@ export async function generateMetadata(
 
   const res = await fetch(`${url}/api/articles?${query}`, {
     next: { revalidate: 3600 }, // Revalidate every hour
+    signal: AbortSignal.timeout(12000), // 12 second timeout
   });
   
   const data: StrapiResponse = await res.json();
@@ -182,6 +184,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
   try {
     const res = await fetch(`${url}/api/articles?${query}`, {
       next: { revalidate: 3600 }, // Revalidate every hour
+      signal: AbortSignal.timeout(12000), // 12 second timeout
     });
     
     if (!res.ok) {
