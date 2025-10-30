@@ -98,12 +98,6 @@ const nextConfig = {
 		};
 	},
 
-	// Internationalization support (optional)
-	i18n: {
-		locales: ['en-IN'],
-		defaultLocale: 'en-IN',
-	},
-
 	// Environment variables
 	env: {
 		NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://oneqid.com',
