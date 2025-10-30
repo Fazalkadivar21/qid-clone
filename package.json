@@ -5,8 +5,12 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "build:static": "next build --turbopack && next export",
+    "export": "next export",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "firebase:deploy": "pnpm run build:static && firebase deploy",
+    "firebase:test": "firebase serve --only hosting"
   },
   "dependencies": {
     "@strapi/blocks-react-renderer": "^1.0.2",
