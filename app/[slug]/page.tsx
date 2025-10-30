@@ -67,6 +67,7 @@ const url = process.env.url || "http://localhost:1337";
 // Generate static params for all articles
 export async function generateStaticParams() {
   try {
+    const apiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || url;
     const query = qs.stringify(
       {
         fields: ["slug"],
@@ -75,9 +76,14 @@ export async function generateStaticParams() {
       { encodeValuesOnly: true }
     );
 
-    const res = await fetch(`${url}/api/articles?${query}`, {
-      cache: "no-store",
+    const res = await fetch(`${apiUrl}/api/articles?${query}`, {
+      next: { revalidate: 3600 },
     });
+    
+    if (!res.ok) {
+      console.warn(`Failed to fetch articles: ${res.status}`);
+      return [];
+    }
     
     const data: StrapiResponse = await res.json();
     
@@ -85,7 +91,7 @@ export async function generateStaticParams() {
       slug: article.slug,
     }));
   } catch (error) {
-    console.error("Error generating static params:", error);
+    console.warn("Error generating static params for /[slug]:", error instanceof Error ? error.message : String(error));
     return [];
   }
 }
